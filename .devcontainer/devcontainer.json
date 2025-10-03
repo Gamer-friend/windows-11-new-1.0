@@ -1,0 +1,17 @@
+{
+    "name": "Windows 11 QEMU (Light)",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "postCreateCommand": "apt-get update && apt-get install -y qemu-system-x86 wget curl unzip dosfstools && rm -rf /var/lib/apt/lists/*",
+    "forwardPorts": [8080, 5900],
+    "customizations": {
+        "vscode": {
+            "extensions": ["ms-vscode-remote.remote-containers"]
+        }
+    },
+    "remoteUser ": "vscode",
+    "overrideFeatureInstallOrder": ["docker-in-docker"]
+}
