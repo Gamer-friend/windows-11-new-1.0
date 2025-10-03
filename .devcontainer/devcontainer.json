@@ -5,7 +5,7 @@
         "ghcr.io/devcontainers/features/docker-in-docker:2": {},
         "ghcr.io/devcontainers/features/git:1": {}
     },
-    "postCreateCommand": "apt-get update && apt-get install -y qemu-system-x86 wget curl unzip dosfstools && rm -rf /var/lib/apt/lists/*",
+    "postCreateCommand": "apt-get update && apt-get install -y qemu-system-x86 wget curl unzip dosfstools qemu-kvm && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*",
     "forwardPorts": [8080, 5900],
     "customizations": {
         "vscode": {
